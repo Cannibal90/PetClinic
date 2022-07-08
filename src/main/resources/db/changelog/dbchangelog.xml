@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd
+      http://www.liquibase.org/xml/ns/pro
+      http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
+
+    <include file="version/01.MedicamentTable.xml" relativeToChangelogFile="true"/>
+    <include file="version/02.PrescriptionTable.xml" relativeToChangelogFile="true"/>
+    <include file="version/03.PrescriptionItemTable.xml" relativeToChangelogFile="true"/>
+    <include file="version/04.RoomTable.xml" relativeToChangelogFile="true"/>
+    <include file="version/05.SpieceTable.xml" relativeToChangelogFile="true"/>
+    <include file="version/06.PetTable.xml" relativeToChangelogFile="true"/>
+    <include file="version/07.PersonTable.xml" relativeToChangelogFile="true"/>
+    <include file="version/08.Pet_PersonTable.xml" relativeToChangelogFile="true"/>
+    <include file="version/09.AppointmentTable.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

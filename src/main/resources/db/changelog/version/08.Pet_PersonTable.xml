@@ -1,0 +1,21 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd
+      http://www.liquibase.org/xml/ns/pro
+      http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
+    <changeSet  author="Cannibal90"  id="8">
+        <createTable tableName="PET_PERSON">
+            <column  name="pet_id"  type="int" />
+            <column  name="owner_id"  type="int" />
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="PET_PERSON" baseColumnNames="pet_id" constraintName="fk_pet_person_pet" referencedTableName="PET"
+                                 referencedColumnNames="id" />
+        <addForeignKeyConstraint baseTableName="PET_PERSON" baseColumnNames="owner_id" constraintName="fk_owner_person_pet" referencedTableName="PERSON"
+                                 referencedColumnNames="id" />
+
+    </changeSet>
+</databaseChangeLog>
