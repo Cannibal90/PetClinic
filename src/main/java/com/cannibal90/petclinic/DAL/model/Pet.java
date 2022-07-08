@@ -28,5 +28,9 @@ public class Pet {
     private Species species;
 
     @ManyToMany
+    @JoinTable(
+            name = "PET_PERSON",
+            joinColumns = @JoinColumn(name = "pet_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "owner_id", referencedColumnName = "id"))
     private Set<Owner> owners;
 }

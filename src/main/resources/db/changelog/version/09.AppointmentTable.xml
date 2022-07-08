@@ -8,16 +8,16 @@
       http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
     <changeSet  author="Cannibal90"  id="9">
         <createTable tableName="APPOINTMENT">
-            <column  name="id"  type="int" autoIncrement="true">
+            <column  name="id"  type="bigint" autoIncrement="true">
                 <constraints  nullable="false"  primaryKey="true"  unique="true"/>
             </column>
             <column name="start_date" type="datetime" />
             <column name="end_date" type="datetime" />
             <column  name="note"  type="varchar(255)" />
-            <column  name="pet_id"  type="int" />
-            <column  name="doctor_id"  type="int" />
-            <column  name="room_id"  type="int" />
-            <column  name="prescription_id"  type="int">
+            <column  name="pet_id"  type="bigint" />
+            <column  name="doctor_id"  type="bigint" />
+            <column  name="room_id"  type="bigint" />
+            <column  name="prescription_id"  type="bigint">
                 <constraints nullable="false" unique="true" />
             </column>
         </createTable>

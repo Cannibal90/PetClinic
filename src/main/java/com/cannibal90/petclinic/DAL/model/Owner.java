@@ -14,6 +14,6 @@ import java.util.List;
 @NoArgsConstructor
 public class Owner extends Person {
 
-    @ManyToMany(mappedBy = "owners")
-    private List<Pet> pets;
+  @ManyToMany(mappedBy = "owners")
+  private List<Pet> pets;
 }

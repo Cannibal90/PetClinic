@@ -8,15 +8,15 @@
       http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
     <changeSet  author="Cannibal90"  id="6">
         <createTable tableName="PET">
-            <column  name="id"  type="int" autoIncrement="true">
+            <column  name="id"  type="bigint" autoIncrement="true">
                 <constraints  nullable="false"  primaryKey="true"  unique="true"/>
             </column>
             <column  name="name"  type="varchar(255)" />
-            <column  name="birth_date"  type="datetime" />
-            <column name="spiece_id" type="int"/>
+            <column  name="birth_date"  type="date" />
+            <column name="species_id" type="bigint"/>
         </createTable>
 
-        <addForeignKeyConstraint baseTableName="PET" baseColumnNames="spiece_id" constraintName="fk_pet_spiece" referencedTableName="SPIECE"
+        <addForeignKeyConstraint baseTableName="PET" baseColumnNames="species_id" constraintName="fk_pet_species" referencedTableName="SPECIES"
                                  referencedColumnNames="id"/>
     </changeSet>
 </databaseChangeLog>

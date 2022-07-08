@@ -7,11 +7,11 @@
       http://www.liquibase.org/xml/ns/pro
       http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
     <changeSet  author="Cannibal90"  id="5">
-        <createTable tableName="SPIECE">
-            <column  name="id"  type="int" autoIncrement="true">
+        <createTable tableName="SPECIES">
+            <column  name="id"  type="bigint" autoIncrement="true">
                 <constraints  nullable="false"  primaryKey="true"  unique="true"/>
             </column>
-            <column  name="spiece_name"  type="varchar(255)" />
+            <column  name="species_name"  type="varchar(255)" />
         </createTable>
     </changeSet>
 </databaseChangeLog>

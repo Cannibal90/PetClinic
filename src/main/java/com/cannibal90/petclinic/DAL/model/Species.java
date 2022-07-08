@@ -15,7 +15,7 @@ public class Species {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String spieceName;
+    private String speciesName;
 
     @OneToMany(mappedBy = "species")
     private List<Pet> pets;

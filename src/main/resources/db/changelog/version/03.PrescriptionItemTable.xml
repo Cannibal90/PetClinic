@@ -8,19 +8,14 @@
       http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
     <changeSet  author="Cannibal90"  id="3">
         <createTable tableName="PRESCRIPTION_ITEM">
-            <column  name="id"  type="int" autoIncrement="true">
+            <column  name="id"  type="bigint" autoIncrement="true">
                 <constraints  nullable="false"  primaryKey="true"  unique="true"/>
             </column>
-            <column  name="quantity"  type="int" />
-            <column  name="medicament_id"  type="int" />
-<!--                <constraints foreignKeyName="fk_medicament_prescription_item" references="MEDICAMENT(id)"  />-->
-<!--            </column>-->
-            <column name="prescription_id" type="int" />
-<!--                <constraints foreignKeyName="fk_prescription_prescription_item" references="PRESCRIPTION(id)" />-->
-<!--            </column>-->
+            <column  name="quantity"  type="bigint" />
+            <column  name="medicament_id"  type="bigint" />
+            <column name="prescription_id" type="bigint" />
         </createTable>
 
-<!--        ALTERNATIVE VERSION OF FK-->
         <addForeignKeyConstraint baseTableName="PRESCRIPTION_ITEM" baseColumnNames="medicament_id"
                                  constraintName="fk_medicament_prescription_item"
                                  referencedTableName="MEDICAMENT" referencedColumnNames="id"/>
