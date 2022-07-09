@@ -17,5 +17,14 @@
     <include file="version/07.PersonTable.xml" relativeToChangelogFile="true"/>
     <include file="version/08.Pet_PersonTable.xml" relativeToChangelogFile="true"/>
     <include file="version/09.AppointmentTable.xml" relativeToChangelogFile="true"/>
+    <include file="version/10.MockMedicaments.xml" relativeToChangelogFile="true"/>
+    <include file="version/11.MockRooms.xml" relativeToChangelogFile="true"/>
+    <include file="version/12.MockSpecies.xml" relativeToChangelogFile="true"/>
+    <include file="version/13.MockPrescriptions.xml" relativeToChangelogFile="true"/>
+    <include file="version/14.MockPets.xml" relativeToChangelogFile="true"/>
+    <include file="version/15.MockPrescriptionItems.xml" relativeToChangelogFile="true"/>
+    <include file="version/16.MockPersons.xml" relativeToChangelogFile="true"/>
+    <include file="version/17.MockPetPersons.xml" relativeToChangelogFile="true"/>
+    <include file="version/18.MockAppointments.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
