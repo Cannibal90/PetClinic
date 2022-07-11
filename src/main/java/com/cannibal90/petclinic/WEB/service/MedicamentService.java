@@ -18,7 +18,7 @@ public class MedicamentService {
 
   public Medicament getMedicamentById(Long id) {
     if (id == null || id <= 0) {
-      throw new WrongParameterException(ExceptionConst.WRONG_MEDICAMENT_ID);
+      throw new WrongParameterException(ExceptionConst.WRONG_ID_PARAMETER);
     }
 
     return medicamentRepository
@@ -45,7 +45,7 @@ public class MedicamentService {
     if (medicament == null) {
       throw new WrongParameterException(ExceptionConst.WRONG_MEDICAMENT_OBJECT);
     } else if (id == null || id <= 0) {
-      throw new WrongParameterException(ExceptionConst.WRONG_MEDICAMENT_ID);
+      throw new WrongParameterException(ExceptionConst.WRONG_ID_PARAMETER);
     }
 
     return medicamentRepository
@@ -64,7 +64,7 @@ public class MedicamentService {
 
   public void deleteMedicament(Long id) {
     if (id == null || id <= 0) {
-      throw new WrongParameterException(ExceptionConst.WRONG_MEDICAMENT_ID);
+      throw new WrongParameterException(ExceptionConst.WRONG_ID_PARAMETER);
     }
 
     Medicament medicament =
