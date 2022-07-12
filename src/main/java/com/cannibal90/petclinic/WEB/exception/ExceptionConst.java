@@ -12,4 +12,7 @@ public interface ExceptionConst {
 
     String SPECIES_NOT_FOUND = "Species was not found";
     String WRONG_SPECIES_OBJECT = "Wrong species object was passed";
+
+    String PRESCRIPTION_ITEM_NOT_FOUND = "Prescription item was not found";
+    String WRONG_PRESCRIPTION_ITEM_OBJECT = "Wrong Prescription item object was passed";
 }
