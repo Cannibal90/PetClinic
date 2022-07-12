@@ -47,7 +47,7 @@ public class MedicamentController {
 
   @PutMapping("/{id}")
   public ResponseEntity<?> updateMedicament(
-      @Valid @PathVariable(name = "id") Long id, @RequestBody MedicamentDTO medicamentDTO) {
+       @PathVariable(name = "id") Long id, @Valid @RequestBody MedicamentDTO medicamentDTO) {
     Medicament updatedMedicament =
         medicamentService.updateMedicament(
             id, medicamentMapper.medicamentDTOToMedicament(medicamentDTO));

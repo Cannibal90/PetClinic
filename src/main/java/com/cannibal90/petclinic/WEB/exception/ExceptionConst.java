@@ -9,4 +9,7 @@ public interface ExceptionConst {
 
     String ROOM_NOT_FOUND = "Room was not found";
     String WRONG_ROOM_OBJECT = "Wrong room object was passed";
+
+    String SPECIES_NOT_FOUND = "Species was not found";
+    String WRONG_SPECIES_OBJECT = "Wrong species object was passed";
 }

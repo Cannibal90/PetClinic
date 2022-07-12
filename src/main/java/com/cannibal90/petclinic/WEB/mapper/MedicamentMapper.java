@@ -19,11 +19,10 @@ public interface MedicamentMapper {
   Medicament medicamentDTOToMedicament(MedicamentDTO medicamentDTO);
 
   @Named("pageToList")
-  default List<Object> pageToList(Page<Medicament> medicaments) {
-    return medicaments.get().map(this::medicamentToMedicamentDTO).collect(Collectors.toList());
+  default List<Object> pageToList(Page<Medicament> page) {
+    return page.get().map(this::medicamentToMedicamentDTO).collect(Collectors.toList());
   }
 
   @Mapping(source = "page", target = "items", qualifiedByName = "pageToList")
   PageDTO medicamentPageToPageDTO(Page<Medicament> page);
-
 }
