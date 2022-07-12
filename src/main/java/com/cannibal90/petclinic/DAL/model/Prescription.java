@@ -17,7 +17,7 @@ public class Prescription {
 
     private String note;
 
-    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn(name = "prescription_id", referencedColumnName = "id")
     private Set<PrescriptionItem> prescriptionItems;
 }

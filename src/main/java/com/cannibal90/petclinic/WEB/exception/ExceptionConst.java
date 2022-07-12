@@ -15,4 +15,7 @@ public interface ExceptionConst {
 
     String PRESCRIPTION_ITEM_NOT_FOUND = "Prescription item was not found";
     String WRONG_PRESCRIPTION_ITEM_OBJECT = "Wrong Prescription item object was passed";
+
+    String PRESCRIPTION_NOT_FOUND = "Prescription was not found";
+    String WRONG_PRESCRIPTION_OBJECT = "Wrong Prescription object was passed";
 }

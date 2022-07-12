@@ -5,6 +5,7 @@ import com.cannibal90.petclinic.WEB.dto.PrescriptionItemDTO;
 import org.mapstruct.Mapper;
 
 import java.util.List;
+import java.util.Set;
 
 @Mapper(componentModel = "spring", uses = {MedicamentMapper.class})
 public interface PrescriptionItemMapper {
@@ -13,5 +14,6 @@ public interface PrescriptionItemMapper {
 
     PrescriptionItem prescriptionItemDTOToPrescriptionItem(PrescriptionItemDTO prescriptionItemDTO);
 
-    List<PrescriptionItemDTO> prescriptionItemListToPrescriptionItemListDTO(List<PrescriptionItem> prescriptionItems);
+    Set<PrescriptionItemDTO> prescriptionItemSetToPrescriptionItemDTOSet(Set<PrescriptionItem> prescriptionItems);
+    Set<PrescriptionItem> prescriptionItemDTOSetToPrescriptionItemSet(Set<PrescriptionItemDTO> prescriptionItemDTOSet);
 }
