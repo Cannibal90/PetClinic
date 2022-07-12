@@ -6,8 +6,8 @@ import java.util.List;
 
 @Data
 public class PageDTO {
-    private long totalItems;
+    private long totalElements;
     private int totalPages;
-    private int currentPage;
+    private int number;
     private List<Object> items;
 }

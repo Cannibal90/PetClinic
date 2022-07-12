@@ -1,11 +1,15 @@
 package com.cannibal90.petclinic.WEB.mapper;
 
+import com.cannibal90.petclinic.DAL.model.Medicament;
 import com.cannibal90.petclinic.DAL.model.Room;
 import com.cannibal90.petclinic.WEB.dto.PageDTO;
 import com.cannibal90.petclinic.WEB.dto.RoomDTO;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.Named;
 import org.springframework.data.domain.Page;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Mapper(componentModel = "spring")
@@ -14,17 +18,11 @@ public interface RoomMapper {
 
   Room roomDTOToRoom(RoomDTO roomDTO);
 
-  default PageDTO roomPageToPageDTO(Page<Room> rooms) {
-    if (rooms == null) {
-      return null;
-    }
-
-    PageDTO pageDTO = new PageDTO();
-    pageDTO.setTotalPages(rooms.getTotalPages());
-    pageDTO.setTotalItems(rooms.getTotalElements());
-    pageDTO.setCurrentPage(rooms.getNumber());
-    pageDTO.setItems(rooms.get().map(this::roomToRoomDTO).collect(Collectors.toList()));
-
-    return pageDTO;
+  @Named("pageToList")
+  default List<Object> pageToList(Page<Room> page) {
+    return page.get().map(this::roomToRoomDTO).collect(Collectors.toList());
   }
+
+  @Mapping(source = "page", target = "items", qualifiedByName = "pageToList")
+  PageDTO roomPageToPageDTO(Page<Room> page);
 }
