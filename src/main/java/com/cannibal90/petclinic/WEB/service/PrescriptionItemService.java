@@ -36,7 +36,7 @@ public class PrescriptionItemService {
 
       Medicament medicament =
               medicamentService.getMedicamentById(prescriptionItem.getMedicament().getId());
-    prescriptionItem.setMedicament(medicament);//TODO check if we need to set variable or only check if medicament exists
+    prescriptionItem.setMedicament(medicament);
 
     return prescriptionItemRepository.save(prescriptionItem);
   }

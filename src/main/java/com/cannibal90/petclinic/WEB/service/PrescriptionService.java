@@ -51,16 +51,10 @@ public class PrescriptionService {
         .findById(id)
         .map(
             foundPrescription -> {
-              // TODO usunac roznice w prescriptionItems?
               Set<Long> foundPrescriptionItems =
                   foundPrescription.getPrescriptionItems().stream()
                       .map(PrescriptionItem::getId)
                       .collect(Collectors.toSet());
-              Set<Long> prescriptionItems =
-                  prescription.getPrescriptionItems().stream()
-                      .map(PrescriptionItem::getId)
-                      .collect(Collectors.toSet());
-              foundPrescriptionItems.removeAll(prescriptionItems);
               foundPrescriptionItems.forEach(prescriptionItemService::deletePrescriptionItem);
 
               foundPrescription.setNote(prescription.getNote());

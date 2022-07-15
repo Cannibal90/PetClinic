@@ -29,6 +29,19 @@ public class SpeciesService {
             });
   }
 
+  public Species getSpeciesByName(String name) {
+    if (name == null || name.length() == 0) {
+      throw new NoDataFoundException(ExceptionConst.WRONG_SPECIES_NAME);
+    }
+
+    return speciesRepository
+        .findSpeciesBySpeciesNameIgnoreCase(name)
+        .orElseThrow(
+            () -> {
+              throw new NoDataFoundException(ExceptionConst.SPECIES_NOT_FOUND);
+            });
+  }
+
   public List<Species> getAllSpecies() {
     return speciesRepository.findAll();
   }
