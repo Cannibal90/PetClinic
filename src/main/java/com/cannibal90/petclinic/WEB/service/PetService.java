@@ -54,7 +54,7 @@ public class PetService {
   public Pet registerPet(Pet pet) {
     if (pet == null) {
       throw new WrongParameterException(ExceptionConst.WRONG_PET_OBJECT);
-    } else if (pet.getOwners().size() == 0) {
+    } else if (pet.getOwners() == null || pet.getOwners().size() == 0) {
       throw new WrongParameterException(ExceptionConst.NO_PET_OWNER);
     }
 
@@ -68,6 +68,8 @@ public class PetService {
       throw new WrongParameterException(ExceptionConst.WRONG_PET_OBJECT);
     } else if (id == null || id <= 0) {
       throw new WrongParameterException(ExceptionConst.WRONG_ID_PARAMETER);
+    } else if (pet.getOwners() == null || pet.getOwners().size() == 0) {
+      throw new WrongParameterException(ExceptionConst.NO_PET_OWNER);
     }
 
     checkOwnersAndSpecie(pet);
@@ -79,6 +81,7 @@ public class PetService {
               foundPet.setName(pet.getName());
               foundPet.setBirthDate(pet.getBirthDate());
               foundPet.setSpecies(pet.getSpecies());
+              foundPet.setOwners(pet.getOwners());
 
               return petRepository.save(foundPet);
             })
@@ -104,7 +107,7 @@ public class PetService {
     petRepository.delete(pet);
   }
 
-  private void checkOwnersAndSpecie(Pet pet) {
+  protected void checkOwnersAndSpecie(Pet pet) {
     List<Long> ownersId = pet.getOwners().stream().map(Owner::getId).collect(Collectors.toList());
     ownersId.forEach(ownerService::getOwnerById);
 
